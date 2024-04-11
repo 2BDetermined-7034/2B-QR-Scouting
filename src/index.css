@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overscroll-behavior: contain;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('/fonts/ethnocentric rg.otf');
+}
+
+@font-face {
+  font-family: 'Ethnocentric it';
+  src: url('/fonts/ethnocentric rg it.otf');
+}

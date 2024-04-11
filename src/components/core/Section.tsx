@@ -10,7 +10,7 @@ export function Section(props: SectionProps) {
       key={props.title}
     >
       {props.title && (
-        <div className="mb-2 rounded-t bg-red-ethnocentric p-1 shadow-md">
+        <div className="mb-2 rounded-t bg-green-ethnocentric p-1 shadow-md">
           <h2 className="font-eth-it text-2xl uppercase text-white dark:text-gray-800">
             {props.title}
           </h2>

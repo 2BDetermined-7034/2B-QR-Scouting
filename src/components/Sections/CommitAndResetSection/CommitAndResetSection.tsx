@@ -16,11 +16,12 @@ export function CommitAndResetSection({
     return formData.sections
       .map(s => s.fields)
       .flat()
-      .filter(
-        f =>
-          f.required &&
-          (f.value === null || f.value === undefined || f.value === ``),
-      );
+      .filter(f => {
+        if (f.code === 'co' && (f.value === null || f.value === undefined || f.value === '')) {
+          f.value = 'No comment';
+        }
+        return f.required && (f.value === null || f.value === undefined || f.value === '');
+      });
   }, [formData]);
 
   return (

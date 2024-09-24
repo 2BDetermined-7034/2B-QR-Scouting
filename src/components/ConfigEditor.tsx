@@ -46,8 +46,8 @@ export function ConfigEditor(props: ConfigEditorProps) {
           <Button
             variant={Variant.Danger}
             onClick={() => props.onSave && props.onSave(currentConfigText)}
-            disabled={currentConfigText.length === 0 || errorCount > 0}
-          >
+            disabled={currentConfigText === JSON.stringify(config, null, 2) || errorCount > 1}
+         >
             Save
           </Button>
           <Button variant={Variant.Primary} onClick={props.onCancel}>

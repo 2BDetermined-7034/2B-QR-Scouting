@@ -67,22 +67,28 @@ export function updateValue(sectionName: string, code: string, data: any) {
 
 export function resetSections() {
   useQRScoutState.setState(
-    produce((state: QRScoutState) =>
-      state.formData.sections
-        .filter(s => !s.preserveDataOnReset)
-        .map(s => s.fields)
-        .flat()
-        .forEach(f => {
-          if (!f.preserveDataOnReset) {
-            f.value = f.defaultValue;
-          } else if (
-            (f.type === 'number' || f.type === 'counter') &&
-            f.autoIncrementOnReset
-          ) {
-            f.value = f.value + 1;
+    produce((state: QRScoutState) => {
+      state.formData.sections.forEach(section => {
+        section.fields.forEach(field => {
+          if (field.code === 'scouter') {
+            field.preserveDataOnReset = true;
           }
-        }),
-    ),
+
+          const fieldPreserveDataOnReset = field.preserveDataOnReset ?? false;
+
+          console.log(`Type: ${field.type}, Value: ${field.value}, PreserveDataOnReset: ${fieldPreserveDataOnReset}`);
+
+          if (!fieldPreserveDataOnReset) {
+            field.value = field.defaultValue;
+          } else if (
+            (field.type === 'number' || field.type === 'counter') &&
+            field.autoIncrementOnReset
+          ) {
+            field.value = field.value + 1;
+          }
+        });
+      });
+    }),
   );
 }
 

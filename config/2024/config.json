@@ -11,7 +11,8 @@
           "title": "Scouter Initials",
           "type": "text",
           "required": true,
-          "code": "scouter"
+          "code": "scouter",
+          "preserveDataOnReset": true
         },
         {
           "title": "Match Number",
@@ -46,6 +47,7 @@
     },
     {
       "name": "Autonomous",
+      "preserveDataOnReset": false,
       "fields": [
         {
           "title": "Mobility Point?",
@@ -74,6 +76,7 @@
     },
     {
       "name": "Teleop",
+      "preserveDataOnReset": false,
       "fields": [
         {
           "code": "tspeaker",
@@ -110,6 +113,7 @@
     },
     {
       "name": "Endgame",
+      "preserveDataOnReset": false,
       "fields": [
         {
           "title": "Climb?",
@@ -122,6 +126,7 @@
     },
     {
       "name": "Postmatch",
+      "preserveDataOnReset": false,
       "fields": [
         {
           "code": "or",

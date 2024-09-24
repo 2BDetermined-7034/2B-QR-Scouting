@@ -1,16 +1,16 @@
 {
-  "$schema": "schema.json",
+  "$schema": "../schema.json",
   "title": "QRScout",
   "page_title": "Crescendo",
   "sections": [
     {
       "name": "Prematch",
-      "preserveDataOnReset": true,
       "fields": [
         {
           "title": "Scouter Initials",
           "type": "text",
           "required": true,
+          "preserveDataOnReset": true,
           "code": "scouter"
         },
         {
@@ -41,73 +41,31 @@
           "type": "number",
           "required": true,
           "code": "teamNumber"
-        },
-        {
-          "title": "Starting Position",
-          "type": "select",
-          "required": true,
-          "code": "Prsp",
-          "choices": {
-            "R1": "Source",
-            "R2": "Middle",
-            "R3": "Amp"
-          },
-          "defaultValue": ""
-        },
-        {
-          "title": "No Show",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false,
-          "code": "noShow"
         }
       ]
     },
     {
       "name": "Autonomous",
+      "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Moved?",
+          "title": "Mobility Point?",
           "type": "boolean",
           "defaultValue": false,
           "required": false,
           "code": "Mved"
         },
         {
-          "code": "ausc",
-          "title": "Speaker Scored",
+          "code": "note#InSpeaker",
+          "title": "Notes Scored in Speaker",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "auskpm",
-          "title": "Speaker Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "a_gp_Path",
-          "title": "Auto Game Piece Path",
-          "type": "select",
-          "multiSelect": true,
-          "choices": {
-            "1": "Speaker 3 (Source Side)",
-            "2": "Speaker 2 (Middle)",
-            "3": "Speaker 1 (Amp Side)",
-            "4": "Midline 5 (Source Edge)",
-            "5": "Midline 4",
-            "6": "Midline 3 (Middle)",
-            "7": "Midline 2",
-            "8": "Midline 1 (Amp Edge)"
-          }
-        },
-        {
-          "code": "auf",
-          "title": "Auto Foul",
+          "code": "note#InAmp",
+          "title": "Notes Scored in Amp",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -117,68 +75,57 @@
     },
     {
       "name": "Teleop",
+      "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "tamps",
-          "title": "Amp Scored",
+          "code": "tspeaker",
+          "title": "Notes Scored in Speaker",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "tsc",
-          "title": "Speaker Scored",
+          "code": "tamp",
+          "title": "Notes Scored in Amp",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "tfs",
-          "title": "Feeder Shots",
+          "code": "ttrap",
+          "title": "Notes Scored in Trap",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "cn",
-          "title": "Note in Trap?",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "Fou/Tech",
+          "code": "Robot Disabled?",
           "title": "Teleop Foul",
-          "type": "counter",
-          "defaultValue": 0,
+          "type": "boolean",
+          "defaultValue": false,
           "required": false
         }
       ]
     },
     {
       "name": "Endgame",
+      "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "End Position",
-          "type": "select",
-          "required": true,
-          "code": "epo",
-          "choices": {
-            "No": "No Climb",
-            "P": "Parked",
-            "Os": "Onstage",
-            "Hm": "Harmony"
-          },
-          "defaultValue": "No"
+          "title": "Climb?",
+          "type": "boolean",
+          "required": false,
+          "code": "bclimb",
+          "defaultValue": false
         }
       ]
     },
     {
       "name": "Postmatch",
+      "preserveDataOnReset": false,
       "fields": [
         {
           "code": "or",

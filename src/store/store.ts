@@ -70,9 +70,6 @@ export function resetSections() {
     produce((state: QRScoutState) => {
       state.formData.sections.forEach(section => {
         section.fields.forEach(field => {
-          if (field.code === 'scouter') {
-            field.preserveDataOnReset = true;
-          }
 
           const fieldPreserveDataOnReset = field.preserveDataOnReset ?? false;
 

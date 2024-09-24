@@ -1,3 +1,4 @@
+// src/components/Sections/ConfigSection/SettingsModal.tsx
 import { Transition } from '@headlessui/react';
 import { useState } from 'preact/hooks';
 import {
@@ -12,7 +13,7 @@ import { Modal } from '../../core/Modal';
 import { Config } from '../../inputs/BaseInputProps';
 import { ThemeSelector } from './ThemeSelector';
 
-export interface ModalProps {
+export interface SettingsModalProps {
   show: boolean;
   onDismiss?: () => void;
 }
@@ -51,12 +52,12 @@ function downloadConfig(formData: Config) {
   download('QRScout_config.json', JSON.stringify(configDownload));
 }
 
-export function SettingsModal(props: ModalProps) {
+export function SettingsModal({ show, onDismiss }: SettingsModalProps) {
   const formData = useQRScoutState(state => state.formData);
   const [showEditor, setShowEditor] = useState(false);
   return (
     <>
-      <Modal show={props.show} onDismiss={props.onDismiss}>
+      <Modal show={show} onDismiss={onDismiss}>
         <div className="flex flex-col justify-start rounded bg-white dark:bg-gray-600 gap-2 p-2">
           <Button
             variant={Variant.Secondary}
@@ -93,13 +94,12 @@ export function SettingsModal(props: ModalProps) {
               onChange={e => uploadConfig(e)}
             />
           </label>
-
           <ThemeSelector />
           <Button
             variant={Variant.Danger}
             onClick={() => resetToDefaultConfig()}
           >
-            Reset Config to Default
+            Reset and Update Config
           </Button>
         </div>
       </Modal>

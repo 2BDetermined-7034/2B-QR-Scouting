@@ -120,6 +120,27 @@
           "required": false,
           "code": "bclimb",
           "defaultValue": false
+        },
+        {
+          "title": "Park?",
+          "type": "boolean",
+          "required": false,
+          "code": "bpark",
+          "defaultValue": false
+        },
+        {
+          "title": "Harmonized?",
+          "type": "boolean",
+          "required": false,
+          "code": "harm",
+          "defaultValue": false
+        },
+        {
+          "title": "Scored in Trap in Endgame?",
+          "type": "boolean",
+          "required": false,
+          "code": "trap",
+          "defaultValue": false
         }
       ]
     },
@@ -128,49 +149,11 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "or",
-          "title": "Offense Skill",
-          "type": "select",
-          "choices": {
-            "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
-            "x": "Not Observed"
-          },
-          "defaultValue": "x",
-          "required": false
-        },
-        {
-          "code": "dr",
-          "title": "Defense Skill",
-          "type": "select",
-          "choices": {
-            "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
-            "x": "Not Observed"
-          },
-          "defaultValue": "x",
-          "required": false
-        },
-        {
-          "code": "dto",
-          "title": "Died/Tipped Over",
+          "code": "under",
+          "title": "Cycled Under the Stage?",
           "type": "boolean",
           "defaultValue": false,
           "required": false
-        },
-        {
-          "code": "yc",
-          "title": "Yellow/Red Card",
-          "type": "select",
-          "defaultValue": "No Card",
-          "required": true,
-          "choices": {
-            "No Card": "No Card",
-            "Yellow": "Yellow Card",
-            "Red": "Red Card"
-          }
         },
         {
           "code": "co",

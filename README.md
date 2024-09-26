@@ -1,3 +1,3 @@
 # Womp Womp 
 
-> [altscout.wlhsfrc.com](https://altscout.wlhsfrc.com)
+> [scouting.wlhsfrc.com](https://scouting.wlhsfrc.com)

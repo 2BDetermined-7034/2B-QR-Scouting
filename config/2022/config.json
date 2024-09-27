@@ -2,6 +2,7 @@
   "$schema": "../schema.json",
   "title": "QRScout",
   "page_title": "Rapid React",
+  "year": "2022",
   "sections": [
     {
       "name": "Prematch",

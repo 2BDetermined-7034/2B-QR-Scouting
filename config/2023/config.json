@@ -2,6 +2,7 @@
   "$schema": "../schema.json",
   "title": "QRScout",
   "page_title": "Charged Up",
+  "year": "2023",
   "sections": [
     {
       "name": "Prematch",

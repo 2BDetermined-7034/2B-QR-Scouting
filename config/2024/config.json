@@ -2,6 +2,7 @@
   "$schema": "../schema.json",
   "title": "QRScout",
   "page_title": "Crescendo",
+  "year": "2024",
   "sections": [
     {
       "name": "Prematch",
@@ -40,7 +41,8 @@
           "title": "Team Number",
           "type": "number",
           "required": true,
-          "code": "teamNumber"
+          "code": "teamNumber",
+          "preserveDataOnReset": false
         }
       ]
     },

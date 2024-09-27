@@ -47,9 +47,15 @@ export const useQRScoutState = createStore<QRScoutState>(
   },
 );
 
-export function resetToDefaultConfig() {
-  useQRScoutState.setState(initialState);
-}
+export const resetToDefaultConfig = async (year: string) => {
+  try {
+    const configModule = await import(`../../config/${year}/config.json`);
+    const config = configModule.default;
+    setConfig(JSON.stringify(config)); // Stringify the config object
+  } catch (error) {
+    console.error(`Error resetting config for year ${year}:`, error);
+  }
+};
 
 export function updateValue(sectionName: string, code: string, data: any) {
   useQRScoutState.setState(
@@ -58,6 +64,10 @@ export function updateValue(sectionName: string, code: string, data: any) {
       if (section) {
         let field = section.fields.find(f => f.code === code);
         if (field) {
+          if (field.type === 'number' && isNaN(Number(data))) {
+            console.error(`Invalid value for field ${code}: ${data} is not a number`);
+            return;
+          }
           field.value = data;
         }
       }

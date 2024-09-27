@@ -1,4 +1,3 @@
-// src/components/Sections/ConfigSection/SettingsModal.tsx
 import { Transition } from '@headlessui/react';
 import { useState } from 'preact/hooks';
 import {
@@ -55,6 +54,10 @@ function downloadConfig(formData: Config) {
 export function SettingsModal({ show, onDismiss }: SettingsModalProps) {
   const formData = useQRScoutState(state => state.formData);
   const [showEditor, setShowEditor] = useState(false);
+
+  // Extract the year from the form data or another relevant source
+  const configYear = formData.year || '2024'; // Default to 2024 if year is not found
+
   return (
     <>
       <Modal show={show} onDismiss={onDismiss}>
@@ -97,7 +100,7 @@ export function SettingsModal({ show, onDismiss }: SettingsModalProps) {
           <ThemeSelector />
           <Button
             variant={Variant.Danger}
-            onClick={() => resetToDefaultConfig()}
+            onClick={() => resetToDefaultConfig(configYear)}
           >
             Reset and Update Config
           </Button>

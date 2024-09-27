@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page p-4 md:p-8">
-      <h1 className="home-title text-2xl md:text-4xl">Select Config Year</h1>
+      <h1 className="home-title text-2xl md:text-4xl">Select Game Year</h1>
       <div className="button-container flex flex-col md:flex-row">
         {years.map(year => (
           <Link href={`/${year}`} key={year} className="year-button m-2 md:m-4 p-2 md:p-4 text-sm md:text-base">

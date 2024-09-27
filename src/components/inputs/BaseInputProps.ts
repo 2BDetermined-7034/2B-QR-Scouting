@@ -30,6 +30,11 @@ export interface InputProps {
   autoIncrementOnReset?: boolean;
 }
 
+export interface Config {
+  year: string;
+  sections: SectionProps[];
+}
+
 export type InputTypes =
   | 'text'
   | 'number'

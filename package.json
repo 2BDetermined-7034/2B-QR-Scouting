@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -17,6 +17,7 @@
     "lodash": "^4.17.21",
     "next-themes": "^0.2.1",
     "preact": "^10.19.3",
+    "preact-router": "^4.1.2",
     "qrcode.react": "^3.1.0",
     "simple-git": "^3.27.0",
     "zustand": "^4.4.7"

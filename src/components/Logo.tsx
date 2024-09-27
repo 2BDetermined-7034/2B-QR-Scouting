@@ -1,7 +1,13 @@
-import logo from '../assets/2BLogo.svg';
+interface LogoProps {
+  className?: string;
+}
 
-export function Logo() {
+export function Logo({ className }: LogoProps) {
   return (
-    <img src={logo} alt="Logo" width="400" height="185.9872611464968" style={{ transform: 'scale(1)' }} />
+    <img
+      src="/src/assets/2BLogo.svg"
+      alt="Logo"
+      className={className}
+    />
   );
 }

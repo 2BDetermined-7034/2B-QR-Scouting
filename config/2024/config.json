@@ -161,7 +161,7 @@
           "type": "text",
           "min": 0,
           "max": 50,
-          "required": false
+          "required": true
         }
       ]
     }

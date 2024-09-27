@@ -1,3 +1,4 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +6,7 @@
 body {
   overscroll-behavior: contain;
   user-select: none;
+  margin: 0; /* Ensure no margin around the body */
 }
 
 @font-face {
@@ -15,4 +17,66 @@ body {
 @font-face {
   font-family: 'Ethnocentric it';
   src: url('/fonts/ethnocentric rg it.otf');
+}
+
+.home-page, .config-page { /* Apply styles to both home and config pages */
+  text-align: center;
+  padding: 20px;
+  background-color: inherit; /* Ensure background color is inherited */
+}
+
+.home-title, .config-title { /* Apply styles to both home and config titles */
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.button-container, .config-container { /* Apply styles to both home and config containers */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.year-button, .config-button { /* Apply styles to both home and config buttons */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.year-button:hover, .config-button:hover { /* Apply hover styles to both home and config buttons */
+  background-color: #0056b3;
+}
+
+body.system {
+  /* System theme styles */
+}
+
+body.dark {
+  background-color: rgb(55, 65, 81);
+  color: #ffffff;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.settings-container {
+  margin-top: 20px;
+}
+
+.settings-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-selector {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
 }

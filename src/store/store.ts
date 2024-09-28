@@ -5,6 +5,8 @@ import configJson from '../../config/2024/config.json';
 import { Config } from '../components/inputs/BaseInputProps';
 import { createStore } from './createStore';
 
+const enableSubpages = true; // Single setting for enabling/disabling the year feature
+
 function buildConfig(c: Config) {
   let config: Config = { ...c };
   config.sections
@@ -48,6 +50,17 @@ export const useQRScoutState = createStore<QRScoutState>(
 );
 
 export const resetToDefaultConfig = async (year: string) => {
+  if (!enableSubpages) {
+    console.warn('Year feature is disabled.');
+    return;
+  }
+
+  const currentYear = useQRScoutState.getState().formData.year;
+  if (currentYear === year) {
+    console.log('Year has not changed, no need to reset config.');
+    return;
+  }
+
   try {
     const configModule = await import(`../../config/${year}/config.json`);
     const config = configModule.default;
@@ -64,15 +77,12 @@ export function updateValue(sectionName: string, code: string, data: any) {
       if (section) {
         let field = section.fields.find(f => f.code === code);
         if (field) {
-          if (field.type === 'number' && isNaN(Number(data))) {
-            console.error(`Invalid value for field ${code}: ${data} is not a number`);
-            return;
-          }
           field.value = data;
         }
       }
     }),
   );
+  saveFormDataToLocalStorage();
 }
 
 export function resetSections() {
@@ -82,8 +92,6 @@ export function resetSections() {
         section.fields.forEach(field => {
 
           const fieldPreserveDataOnReset = field.preserveDataOnReset ?? false;
-
-          console.log(`Type: ${field.type}, Value: ${field.value}, PreserveDataOnReset: ${fieldPreserveDataOnReset}`);
 
           if (!fieldPreserveDataOnReset) {
             field.value = field.defaultValue;
@@ -97,10 +105,12 @@ export function resetSections() {
       });
     }),
   );
+  saveFormDataToLocalStorage();
 }
 
 export function setFormData(config: Config) {
   useQRScoutState.setState({ formData: buildConfig(config) });
+  saveFormDataToLocalStorage();
 }
 
 export function setConfig(configText: string) {
@@ -134,3 +144,18 @@ export function getFieldValue(code: string) {
     .flat()
     .find(f => f.code === code)?.value;
 }
+
+function saveFormDataToLocalStorage() {
+  const formData = useQRScoutState.getState().formData;
+  localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+function loadFormDataFromLocalStorage() {
+  const formData = localStorage.getItem('formData');
+  if (formData) {
+    setFormData(JSON.parse(formData));
+  }
+}
+
+// Load form data from local storage on initialization
+loadFormDataFromLocalStorage();

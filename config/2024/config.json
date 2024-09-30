@@ -162,7 +162,7 @@
           "title": "Comments",
           "type": "text",
           "min": 0,
-          "max": 50,
+          "max": 300,
           "required": true
         }
       ]

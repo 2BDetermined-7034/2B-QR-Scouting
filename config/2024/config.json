@@ -104,8 +104,8 @@
           "required": false
         },
         {
-          "code": "Robot Disabled?",
-          "title": "Teleop Foul",
+          "code": "tfoul",
+          "title": "Robot Disabled?",
           "type": "boolean",
           "defaultValue": false,
           "required": false

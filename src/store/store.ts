@@ -5,8 +5,6 @@ import configJson from '../../config/2024/config.json';
 import { Config } from '../components/inputs/BaseInputProps';
 import { createStore } from './createStore';
 
-const enableSubpages = true; // Single setting for enabling/disabling the year feature
-
 function buildConfig(c: Config) {
   let config: Config = { ...c };
   config.sections
@@ -49,26 +47,9 @@ export const useQRScoutState = createStore<QRScoutState>(
   },
 );
 
-export const resetToDefaultConfig = async (year: string) => {
-  if (!enableSubpages) {
-    console.warn('Year feature is disabled.');
-    return;
-  }
-
-  const currentYear = useQRScoutState.getState().formData.year;
-  if (currentYear === year) {
-    console.log('Year has not changed, no need to reset config.');
-    return;
-  }
-
-  try {
-    const configModule = await import(`../../config/${year}/config.json`);
-    const config = configModule.default;
-    setConfig(JSON.stringify(config)); // Stringify the config object
-  } catch (error) {
-    console.error(`Error resetting config for year ${year}:`, error);
-  }
-};
+export function resetToDefaultConfig() {
+  useQRScoutState.setState(initialState);
+}
 
 export function updateValue(sectionName: string, code: string, data: any) {
   useQRScoutState.setState(
@@ -82,35 +63,31 @@ export function updateValue(sectionName: string, code: string, data: any) {
       }
     }),
   );
-  saveFormDataToLocalStorage();
 }
 
 export function resetSections() {
   useQRScoutState.setState(
-    produce((state: QRScoutState) => {
-      state.formData.sections.forEach(section => {
-        section.fields.forEach(field => {
-
-          const fieldPreserveDataOnReset = field.preserveDataOnReset ?? false;
-
-          if (!fieldPreserveDataOnReset) {
-            field.value = field.defaultValue;
+    produce((state: QRScoutState) =>
+      state.formData.sections
+        .filter(s => !s.preserveDataOnReset)
+        .map(s => s.fields)
+        .flat()
+        .forEach(f => {
+          if (!f.preserveDataOnReset) {
+            f.value = f.defaultValue;
           } else if (
-            (field.type === 'number' || field.type === 'counter') &&
-            field.autoIncrementOnReset
+            (f.type === 'number' || f.type === 'counter') &&
+            f.autoIncrementOnReset
           ) {
-            field.value = field.value + 1;
+            f.value = f.value + 1;
           }
-        });
-      });
-    }),
+        }),
+    ),
   );
-  saveFormDataToLocalStorage();
 }
 
 export function setFormData(config: Config) {
   useQRScoutState.setState({ formData: buildConfig(config) });
-  saveFormDataToLocalStorage();
 }
 
 export function setConfig(configText: string) {
@@ -144,18 +121,3 @@ export function getFieldValue(code: string) {
     .flat()
     .find(f => f.code === code)?.value;
 }
-
-function saveFormDataToLocalStorage() {
-  const formData = useQRScoutState.getState().formData;
-  localStorage.setItem('formData', JSON.stringify(formData));
-}
-
-function loadFormDataFromLocalStorage() {
-  const formData = localStorage.getItem('formData');
-  if (formData) {
-    setFormData(JSON.parse(formData));
-  }
-}
-
-// Load form data from local storage on initialization
-loadFormDataFromLocalStorage();

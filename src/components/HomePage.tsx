@@ -2,7 +2,7 @@ import { useState, useEffect } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 
 const HomePage = () => {
-  const years = ['2022', '2023', '2024']; // Manual list of years
+  const years = ['2024']; // Manual list of years
   const [pageTitles, setPageTitles] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {

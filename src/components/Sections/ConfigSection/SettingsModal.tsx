@@ -12,7 +12,7 @@ import { Modal } from '../../core/Modal';
 import { Config } from '../../inputs/BaseInputProps';
 import { ThemeSelector } from './ThemeSelector';
 
-export interface SettingsModalProps {
+export interface ModalProps {
   show: boolean;
   onDismiss?: () => void;
 }
@@ -51,16 +51,12 @@ function downloadConfig(formData: Config) {
   download('QRScout_config.json', JSON.stringify(configDownload));
 }
 
-export function SettingsModal({ show, onDismiss }: SettingsModalProps) {
+export function SettingsModal(props: ModalProps) {
   const formData = useQRScoutState(state => state.formData);
   const [showEditor, setShowEditor] = useState(false);
-
-  // Extract the year from the form data or another relevant source
-  const configYear = formData.year || '2024'; // Default to 2024 if year is not found
-
   return (
     <>
-      <Modal show={show} onDismiss={onDismiss}>
+      <Modal show={props.show} onDismiss={props.onDismiss}>
         <div className="flex flex-col justify-start rounded bg-white dark:bg-gray-600 gap-2 p-2">
           <Button
             variant={Variant.Secondary}
@@ -97,12 +93,13 @@ export function SettingsModal({ show, onDismiss }: SettingsModalProps) {
               onChange={e => uploadConfig(e)}
             />
           </label>
+
           <ThemeSelector />
           <Button
             variant={Variant.Danger}
-            onClick={() => resetToDefaultConfig(configYear)}
+            onClick={() => resetToDefaultConfig()}
           >
-            Reset and Update Config
+            Reset Config to Default
           </Button>
         </div>
       </Modal>

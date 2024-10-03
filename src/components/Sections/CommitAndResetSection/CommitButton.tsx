@@ -3,13 +3,15 @@ export type CommitButtonProps = {
   disabled: boolean;
 };
 
-export function CommitButton(props: CommitButtonProps) {
+export function CommitButton({ onClick, disabled }: CommitButtonProps) {
   return (
     <button
-      className="focus:shadow-outline mx-2 rounded bg-gray-700 py-6 px-6 font-bold uppercase text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300 dark:bg-red-ethnocentric"
+      className={`rounded-2xl focus:shadow-outline mx-2 py-6 px-6 font-bold uppercase text-white focus:shadow-lg focus:outline-none ${
+        disabled ? 'dark:bg-gray-500' : 'bg-red-500 hover:bg-red-700'
+      }`}
       type="button"
-      onClick={props.onClick}
-      disabled={props.disabled}
+      onClick={onClick}
+      disabled={disabled}
     >
       Commit
     </button>

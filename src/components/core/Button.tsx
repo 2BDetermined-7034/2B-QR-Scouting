@@ -15,9 +15,9 @@ export enum Variant {
 }
 
 const VARIANT_MAPS: Record<Variant, string> = {
-  [Variant.Primary]: 'bg-gray-700 hover:bg-gray-800 disabled:bg-gray-300',
-  [Variant.Secondary]: 'bg-gray-500 hover:bg-gray-600 disabled:bg-gray-300',
-  [Variant.Danger]: 'bg-red-500 hover:bg-red-700 disabled:bg-red-300',
+  [Variant.Primary]: 'bg-gray-700 hover:bg-gray-800 disabled:bg-gray-300 rounded-full',
+  [Variant.Secondary]: 'bg-gray-500 hover:bg-gray-600 disabled:bg-gray-300 rounded-full',
+  [Variant.Danger]: 'bg-red-500 hover:bg-red-700 disabled:bg-red-300 rounded-full',
   [Variant.Transparent]:
     'bg-transparent hover:bg-gray-200 hover:text-gray-600 disabled:bg-gray-300',
 };

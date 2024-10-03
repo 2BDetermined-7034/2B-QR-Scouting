@@ -1,3 +1,5 @@
+import logo from "../assets/2BLogo.svg"
+
 interface LogoProps {
   className?: string;
 }
@@ -5,7 +7,7 @@ interface LogoProps {
 export function Logo({ className }: LogoProps) {
   return (
     <img
-      src="../../src/assets/2BLogo.svg"
+      src={logo}
       alt="Logo"
       className={className}
     />

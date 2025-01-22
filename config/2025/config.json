@@ -1,1 +1,188 @@
-
+{
+  "$schema": "../schema.json",
+  "title": "QRScout",
+  "page_title": "Reefscape",
+  "year": "2025",
+  "sections": [
+    {
+      "name": "Prematch",
+      "fields": [
+        {
+          "title": "Scouter Initials",
+          "type": "text",
+          "required": true,
+          "preserveDataOnReset": true,
+          "code": "scouter"
+        },
+        {
+          "title": "Match Number",
+          "type": "number",
+          "required": true,
+          "code": "matchNumber",
+          "preserveDataOnReset": true,
+          "autoIncrementOnReset": true
+        },
+        {
+          "title": "Robot",
+          "type": "select",
+          "required": true,
+          "preserveDataOnReset": true,
+          "code": "robot",
+          "choices": {
+            "R1": "Red 1",
+            "R2": "Red 2",
+            "R3": "Red 3",
+            "B1": "Blue 1",
+            "B2": "Blue 2",
+            "B3": "Blue 3"
+          },
+          "defaultValue": "R1"
+        },
+        {
+          "title": "Team Number",
+          "type": "number",
+          "required": true,
+          "code": "teamNumber"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Mobility Point?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false,
+          "code": "Mved"
+        },
+        {
+          "code": "note#InSpeaker",
+          "title": "Notes Scored in Speaker",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "note#InAmp",
+          "title": "Notes Scored in Amp",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "tspeaker",
+          "title": "Notes Scored in Speaker",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tamp",
+          "title": "Notes Scored in Amp",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "ttrap",
+          "title": "Notes Scored in Trap",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "Robot Disabled?",
+          "title": "Teleop Foul",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Climb?",
+          "type": "boolean",
+          "required": false,
+          "code": "bclimb",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "name": "Postmatch",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "or",
+          "title": "Offense Skill",
+          "type": "select",
+          "choices": {
+            "1": "Not Effective",
+            "2": "Average",
+            "3": "Very Effective",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "dr",
+          "title": "Defense Skill",
+          "type": "select",
+          "choices": {
+            "1": "Not Effective",
+            "2": "Average",
+            "3": "Very Effective",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "dto",
+          "title": "Died/Tipped Over",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "yc",
+          "title": "Yellow/Red Card",
+          "type": "select",
+          "defaultValue": "No Card",
+          "required": true,
+          "choices": {
+            "No Card": "No Card",
+            "Yellow": "Yellow Card",
+            "Red": "Red Card"
+          }
+        },
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "min": 0,
+          "max": 300,
+          "required": true
+        }
+      ]
+    }
+  ]
+}

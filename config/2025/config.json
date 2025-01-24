@@ -51,23 +51,55 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Mobility Point?",
+          "title": "Left Starting Zone?",
           "type": "boolean",
           "defaultValue": false,
           "required": false,
           "code": "Mved"
         },
         {
-          "code": "note#InSpeaker",
-          "title": "Notes Scored in Speaker",
+          "code": "al4",
+          "title": "Coral in L4",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "note#InAmp",
-          "title": "Notes Scored in Amp",
+          "code": "al3",
+          "title": "Coral in L3",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al2",
+          "title": "Coral in L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al1",
+          "title": "Coral in L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "aprocessor",
+          "title": "Algae in Processor",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "anet",
+          "title": "Algae in Processor",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -80,24 +112,48 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "tspeaker",
-          "title": "Notes Scored in Speaker",
+          "code": "tl4",
+          "title": "Coral in L4",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "tamp",
-          "title": "Notes Scored in Amp",
+          "code": "tl3",
+          "title": "Coral in L3",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "ttrap",
-          "title": "Notes Scored in Trap",
+          "code": "tl2",
+          "title": "Coral in L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl1",
+          "title": "Coral in L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tprocesser",
+          "title": "Algae in processor",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tnet",
+          "title": "Algae in net",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -117,10 +173,24 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Climb?",
+          "title": "Shallow Climb",
           "type": "boolean",
           "required": false,
-          "code": "bclimb",
+          "code": "sclimb",
+          "defaultValue": false
+        },
+
+          "title": "Deep Climb",
+          "type": "boolean",
+          "required": false,
+          "code": "dclimb",
+          "defaultValue": false
+        },
+        {
+          "title": "Park",
+          "type": "boolean",
+          "required": false,
+          "code": "park",
           "defaultValue": false
         }
       ]
@@ -150,6 +220,19 @@
             "1": "Not Effective",
             "2": "Average",
             "3": "Very Effective",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "ar",
+          "title": "Accuracy",
+          "type": "select",
+          "choices": {
+            "1": "Not Accurate",
+            "2": "Average",
+            "3": "Very Accurate",
             "x": "Not Observed"
           },
           "defaultValue": "x",

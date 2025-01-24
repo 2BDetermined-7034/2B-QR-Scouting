@@ -6,7 +6,7 @@ import { App } from '../app.tsx';
 const AppRouter = () => {
   return (
     <Router>
-      <Route path="/" component={App} />
+      <Route path="/2025" component={App} />
       {/*<Route path="" component={App} />*/}
     </Router>
   );

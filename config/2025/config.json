@@ -179,7 +179,7 @@
           "code": "sclimb",
           "defaultValue": false
         },
-
+        {
           "title": "Deep Climb",
           "type": "boolean",
           "required": false,

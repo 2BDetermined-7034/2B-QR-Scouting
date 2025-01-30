@@ -29,7 +29,7 @@ export function CommitAndResetSection({
       <ResetButton />
 
      <Button
-        className="flex justify-center"
+        className="flex justify-center bg-center"
         variant={Variant.Danger}
         onClick={() => resetToDefaultConfig()}
       >

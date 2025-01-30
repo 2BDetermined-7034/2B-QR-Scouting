@@ -19,7 +19,7 @@ const HomePage = () => {
       setPageTitles(titles);
     };
 
-    loadPageTitles();
+    loadPageTitles().then(r => r);
   }, []);
 
   return (

@@ -1,8 +1,9 @@
 import { useMemo } from 'preact/hooks';
-import { useQRScoutState } from '../../../store/store';
+import { resetToDefaultConfig, useQRScoutState } from '../../../store/store';
 import { Section } from '../../core/Section';
 import { CommitButton } from './CommitButton';
 import { ResetButton } from './ResetButton';
+import Button, { Variant } from '../../core/Button.tsx';
 
 export type CommitAndResetSectionProps = {
   onCommit: () => void;
@@ -26,6 +27,14 @@ export function CommitAndResetSection({
         onClick={onCommit}
       />
       <ResetButton />
+
+     <Button
+        className="flex justify-center"
+        variant={Variant.Danger}
+        onClick={() => resetToDefaultConfig()}
+      >
+        Reset Config to Default
+      </Button>
     </Section>
   );
 }

@@ -28,12 +28,12 @@ export function CommitAndResetSection({
       />
       <ResetButton />
 
-     <Button
-        className="flex justify-center bg-center"
+      <Button
+        className="flex justify-center items-center"
         variant={Variant.Danger}
         onClick={() => resetToDefaultConfig()}
       >
-        Reset Config to Default
+        Reset Page to Default
       </Button>
     </Section>
   );

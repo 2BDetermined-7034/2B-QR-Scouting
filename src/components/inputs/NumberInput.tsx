@@ -11,7 +11,11 @@ export interface NumberInputProps extends BaseInputProps {
 export default function NumberInput(data: NumberInputProps) {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    data.onChange(Number(e.currentTarget.value));
+    const newValue = e.currentTarget.value;
+
+    if (!isNaN(Number(newValue))) {
+      data.onChange(Number(newValue));
+    }
   }
 
   return (

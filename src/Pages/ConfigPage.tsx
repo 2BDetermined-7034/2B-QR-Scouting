@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'preact/hooks';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { QRModal } from './QR';
-import { Sections } from './Sections';
-import { CommitAndResetSection } from './Sections/CommitAndResetSection';
-import { ConfigSection } from './Sections/ConfigSection';
-import { useQRScoutState } from '../store/store';
+import { Header } from '../components/Header.tsx';
+import { Footer } from '../components/Footer.tsx';
+import { QRModal } from '../components/QR';
+import { Sections } from '../components/Sections';
+import { CommitAndResetSection } from '../components/Sections/CommitAndResetSection';
+import { ConfigSection } from '../components/Sections/ConfigSection';
+import { useQRScoutState } from '../store/store.ts';
 import '../index.css';
 
 interface ConfigPageProps {

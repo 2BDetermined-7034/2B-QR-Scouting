@@ -1,12 +1,12 @@
 import { useState } from 'preact/hooks';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { QRModal } from './components/QR';
-import { Sections } from './components/Sections';
-import { CommitAndResetSection } from './components/Sections/CommitAndResetSection';
-import { ConfigSection } from './components/Sections/ConfigSection';
-import { useQRScoutState } from './store/store';
-import './index.css';
+import { Footer } from '../components/Footer.tsx';
+import { Header } from '../components/Header.tsx';
+import { QRModal } from '../components/QR';
+import { Sections } from '../components/Sections';
+import { CommitAndResetSection } from '../components/Sections/CommitAndResetSection';
+import { ConfigSection } from '../components/Sections/ConfigSection';
+import { useQRScoutState } from '../store/store.ts';
+import '../index.css';
 
 export function App() {
   const formData = useQRScoutState(state => state.formData);

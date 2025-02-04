@@ -1,6 +1,6 @@
 import { Router, Route } from 'preact-router';
-import HomePage from './HomePage';
-import ConfigPage from './ConfigPage';
+import HomePage from '../Pages/HomePage.tsx';
+import ConfigPage from '../Pages/ConfigPage.tsx';
 // import { App } from '../app.tsx';
 
 const AppRouter = () => {

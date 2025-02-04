@@ -99,7 +99,7 @@
         },
         {
           "code": "anet",
-          "title": "Algae in Processor",
+          "title": "Algae in Net",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,

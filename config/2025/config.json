@@ -145,7 +145,7 @@
         },
         {
           "code": "tprocesser",
-          "title": "Algae in processor",
+          "title": "Algae in Processor",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -153,7 +153,7 @@
         },
         {
           "code": "tnet",
-          "title": "Algae in net",
+          "title": "Algae in Net",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -236,13 +236,6 @@
             "x": "Not Observed"
           },
           "defaultValue": "x",
-          "required": false
-        },
-        {
-          "code": "dto",
-          "title": "Died/Tipped Over",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         },
         {

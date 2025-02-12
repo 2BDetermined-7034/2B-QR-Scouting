@@ -173,17 +173,17 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Shallow Climb",
-          "type": "boolean",
-          "required": false,
-          "code": "sclimb",
-          "defaultValue": false
-        },
-        {
           "title": "Deep Climb",
           "type": "boolean",
           "required": false,
           "code": "dclimb",
+          "defaultValue": false
+        },
+        {
+          "title": "Shallow Climb",
+          "type": "boolean",
+          "required": false,
+          "code": "sclimb",
           "defaultValue": false
         },
         {

@@ -51,7 +51,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Left Starting Zone?",
+          "title": "Left Starting Zone",
           "type": "boolean",
           "defaultValue": false,
           "required": false,
@@ -161,7 +161,7 @@
         },
         {
           "code": "tdis",
-          "title": "Robot Disabled?",
+          "title": "Robot Disabled",
           "type": "boolean",
           "defaultValue": false,
           "required": false

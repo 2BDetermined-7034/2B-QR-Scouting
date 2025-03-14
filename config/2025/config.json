@@ -200,6 +200,13 @@
       "preserveDataOnReset": false,
       "fields": [
         {
+          "title": "Algae Removal",
+          "type": "boolean",
+          "required": false,
+          "code": "ARemove",
+          "defaultValue": false
+        },
+        {
           "code": "or",
           "title": "Offense Skill",
           "type": "select",

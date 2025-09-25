@@ -211,8 +211,10 @@
           "title": "Offense Skill",
           "type": "select",
           "choices": {
-            "1": "Not Effective",
+            "1": "Active Hindrance",
+            "1.5": "Not Effective",
             "2": "Average",
+            "2.5": "Fairly Effective",
             "3": "Very Effective",
             "x": "Not Observed"
           },
@@ -224,8 +226,10 @@
           "title": "Defense Skill",
           "type": "select",
           "choices": {
-            "1": "Not Effective",
+            "1": "Active Hindrance",
+            "1.5": "Not Effective",
             "2": "Average",
+            "2.5": "Fairly Effective",
             "3": "Very Effective",
             "x": "Not Observed"
           },
@@ -239,6 +243,7 @@
           "choices": {
             "1": "Not Accurate",
             "2": "Average",
+            "2.5": "Fairly Accurate",
             "3": "Very Accurate",
             "x": "Not Observed"
           },

@@ -242,7 +242,7 @@
           "type": "select",
           "choices": {
             "1": "Not Accurate",
-            "2": "Inconsistant"
+            "2": "Inconsistant",
             "3": "Average",
             "4": "Fairly Accurate",
             "5": "Very Accurate",

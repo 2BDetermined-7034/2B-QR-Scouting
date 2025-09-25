@@ -212,10 +212,10 @@
           "type": "select",
           "choices": {
             "1": "Active Hindrance",
-            "1.5": "Not Effective",
-            "2": "Average",
-            "2.5": "Fairly Effective",
-            "3": "Very Effective",
+            "2": "Not Effective",
+            "3": "Average",
+            "4": "Fairly Effective",
+            "5": "Very Effective",
             "x": "Not Observed"
           },
           "defaultValue": "x",
@@ -227,10 +227,10 @@
           "type": "select",
           "choices": {
             "1": "Active Hindrance",
-            "1.5": "Not Effective",
-            "2": "Average",
-            "2.5": "Fairly Effective",
-            "3": "Very Effective",
+            "2": "Not Effective",
+            "3": "Average",
+            "4": "Fairly Effective",
+            "5": "Very Effective",
             "x": "Not Observed"
           },
           "defaultValue": "x",
@@ -242,9 +242,10 @@
           "type": "select",
           "choices": {
             "1": "Not Accurate",
-            "2": "Average",
-            "2.5": "Fairly Accurate",
-            "3": "Very Accurate",
+            "2": "Inconsistant"
+            "3": "Average",
+            "4": "Fairly Accurate",
+            "5": "Very Accurate",
             "x": "Not Observed"
           },
           "defaultValue": "x",

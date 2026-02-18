@@ -1,1 +1,259 @@
-
+{
+  "$schema": "../schema.json",
+  "title": "QRScout",
+  "page_title": "Rebuilt",
+  "year": "2026",
+  "sections": [
+    {
+      "name": "Prematch",
+      "fields": [
+        {
+          "title": "Scouter Initials",
+          "type": "text",
+          "required": true,
+          "preserveDataOnReset": true,
+          "code": "scouter"
+        },
+        {
+          "title": "Match Number",
+          "type": "number",
+          "required": true,
+          "code": "matchNumber",
+          "preserveDataOnReset": true,
+          "autoIncrementOnReset": true
+        },
+        {
+          "title": "Robot",
+          "type": "select",
+          "required": true,
+          "preserveDataOnReset": true,
+          "code": "robot",
+          "choices": {
+            "R1": "Red 1",
+            "R2": "Red 2",
+            "R3": "Red 3",
+            "B1": "Blue 1",
+            "B2": "Blue 2",
+            "B3": "Blue 3"
+          },
+          "defaultValue": "R1"
+        },
+        {
+          "title": "Team Number",
+          "type": "number",
+          "required": true,
+          "code": "teamNumber"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "al4",
+          "title": "Coral in L4",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 2,
+          "required": false
+        },
+        {
+          "code": "al3",
+          "title": "Coral in L3",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al2",
+          "title": "Coral in L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al1",
+          "title": "Coral in L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "aclimb",
+          "title": "Climb l1",
+          "type": "boolean",
+          "defaultValue": 0,
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "anet",
+          "title": "Algae in Net",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "tl4",
+          "title": "Coral in L4",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl3",
+          "title": "Coral in L3",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl2",
+          "title": "Coral in L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl1",
+          "title": "Coral in L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tprocesser",
+          "title": "Algae in Processor",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tnet",
+          "title": "Algae in Net",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tdis",
+          "title": "Robot Disabled",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Deep Climb",
+          "type": "boolean",
+          "required": false,
+          "code": "dclimb",
+          "defaultValue": false
+        },
+        {
+          "title": "Shallow Climb",
+          "type": "boolean",
+          "required": false,
+          "code": "sclimb",
+          "defaultValue": false
+        },
+        {
+          "title": "Park",
+          "type": "boolean",
+          "required": false,
+          "code": "park",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "name": "Postmatch",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Algae Removal",
+          "type": "boolean",
+          "required": false,
+          "code": "ARemove",
+          "defaultValue": false
+        },
+        {
+          "code": "or",
+          "title": "Offense Skill",
+          "type": "select",
+          "choices": {
+            "1": "Active Hindrance",
+            "2": "Not Effective",
+            "3": "Average",
+            "4": "Fairly Effective",
+            "5": "Very Effective",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "dr",
+          "title": "Defense Skill",
+          "type": "select",
+          "choices": {
+            "1": "Active Hindrance",
+            "2": "Not Effective",
+            "3": "Average",
+            "4": "Fairly Effective",
+            "5": "Very Effective",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "ar",
+          "title": "Accuracy",
+          "type": "select",
+          "choices": {
+            "1": "Not Accurate",
+            "2": "Inconsistant",
+            "3": "Average",
+            "4": "Fairly Accurate",
+            "5": "Very Accurate",
+            "x": "Not Observed"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "min": 0,
+          "max": 300,
+          "required": true
+        }
+      ]
+    }
+  ]
+}

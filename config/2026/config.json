@@ -43,99 +43,6 @@
           "type": "number",
           "required": true,
           "code": "teamNumber"
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "preserveDataOnReset": false,
-      "fields": [
-        {
-          "code": "af10",
-          "title": "Fuel X10",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 10,
-          "required": false
-        },
-        {
-          "code": "af5",
-          "title": "Fuel X5",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 5,
-          "required": false
-        },
-        {
-          "code": "af1",
-          "title": "Fuel X1",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "ac",
-          "title": "Climb l1",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Teleop",
-      "preserveDataOnReset": false,
-      "fields": [
-        {
-          "code": "t4",
-          "title": "Coral in L4",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "t3",
-          "title": "Coral in L3",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "t2",
-          "title": "Coral in L2",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "t1",
-          "title": "Coral in L1",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tp",
-          "title": "Algae in Processor",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tn",
-          "title": "Algae in Net",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
         },
         {
           "code": "td",
@@ -147,29 +54,143 @@
       ]
     },
     {
+      "name": "Auto",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "af8",
+          "title": "Preloaded 8",
+          "type": "counter",
+          "defaultValue": 8,
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "required": false
+        },
+        {
+          "code": "af5",
+          "title": "Additional Fuel",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 5,
+          "required": false
+        },
+        {
+          "code": "ac",
+          "title": "L1 Climb",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "sc",
+          "title": "Side climb?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Transition",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "f1",
+          "title": "Fuel x5",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 5,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Active 1",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "shft",
+          "title": "Shift 1?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "f2",
+          "title": "Fuel x5",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 5,
+          "required": false
+        },
+        {
+          "code": "fct",
+          "title": "Role",
+          "type": "select",
+          "choices": {
+            "1": "Shooter",
+            "2": "Shuttle",
+            "3": "Defense",
+            "x": "Other"
+          },
+          "multiSelect": true,
+          "required": false
+        },
+        {
+          "code": "test",
+          "title": "test",
+          "type": "range",
+          "min": 0,
+          "max": 5,
+          "defaultValue": 0
+        }
+      ]
+    },
+    {
+      "name": "Active 2",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "code": "f3",
+          "title": "Fuel x5",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 5,
+          "required": false
+        }
+      ]
+    },
+    {
       "name": "Endgame",
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Deep Climb",
-          "type": "boolean",
+          "code": "ef5",
+          "title": "Fuel x5",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 5,
+          "required": false
+        },
+        {
+          "title": "Climb",
+          "type": "select",
+          "choices": {
+            "0": "Attempted & Failed",
+            "1": "L1",
+            "2": "L2",
+            "3": "L3",
+            "x": "No Climb"
+          },
           "required": false,
           "code": "dc",
-          "defaultValue": false
-        },
-        {
-          "title": "Shallow Climb",
-          "type": "boolean",
-          "required": false,
-          "code": "sc",
-          "defaultValue": false
-        },
-        {
-          "title": "Park",
-          "type": "boolean",
-          "required": false,
-          "code": "p",
-          "defaultValue": false
+          "defaultValue": "x"
         }
       ]
     },
@@ -178,11 +199,29 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Algae Removal",
-          "type": "boolean",
-          "required": false,
-          "code": "AR",
-          "defaultValue": false
+          "code": "ir1",
+          "title": "Alliance Rank",
+          "type": "select",
+          "choices": {
+            "1": "1 - Least",
+            "2": "2",
+            "3": "3 - Greatest",
+            "x": ""
+          },
+          "defaultValue": "x",
+          "required": true
+        },
+        {
+          "code": "sr1",
+          "title": "Scouting Accuracy",
+          "type": "select",
+          "choices": {
+            "1": "Missed Much",
+            "2": "Caught Most",
+            "3": "Caught All"
+          },
+          "defaultValue": "2",
+          "required": true
         },
         {
           "code": "or1",
@@ -197,7 +236,7 @@
             "x": "Not Observed"
           },
           "defaultValue": "x",
-          "required": false
+          "required": true
         },
         {
           "code": "dr2",
@@ -212,7 +251,7 @@
             "x": "Not Observed"
           },
           "defaultValue": "x",
-          "required": false
+          "required": true
         },
         {
           "code": "ar3",
@@ -227,7 +266,7 @@
             "x": "Not Observed"
           },
           "defaultValue": "x",
-          "required": false
+          "required": true
         },
         {
           "code": "co1",

@@ -45,7 +45,7 @@
           "code": "teamNumber"
         },
         {
-          "code": "td",
+          "code": "disabled",
           "title": "Robot Disabled",
           "type": "boolean",
           "defaultValue": false,

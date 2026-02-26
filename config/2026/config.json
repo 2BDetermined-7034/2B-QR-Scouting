@@ -58,7 +58,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "af8",
+          "code": "afuel8",
           "title": "Preloaded 8",
           "type": "counter",
           "defaultValue": 8,
@@ -68,7 +68,7 @@
           "required": false
         },
         {
-          "code": "af5",
+          "code": "afuel",
           "title": "Additional Fuel",
           "type": "counter",
           "defaultValue": 0,
@@ -77,14 +77,14 @@
           "required": false
         },
         {
-          "code": "ac",
+          "code": "aclimb",
           "title": "L1 Climb",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "sc",
+          "code": "aside",
           "title": "Side climb?",
           "type": "boolean",
           "defaultValue": false,
@@ -97,7 +97,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "f1",
+          "code": "Tfuel",
           "title": "Fuel x5",
           "type": "counter",
           "defaultValue": 0,
@@ -112,14 +112,14 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "shft",
+          "code": "shift",
           "title": "Shift 1?",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "f2",
+          "code": "a1fuel",
           "title": "Fuel x5",
           "type": "counter",
           "defaultValue": 0,
@@ -128,7 +128,7 @@
           "required": false
         },
         {
-          "code": "fct",
+          "code": "a1role",
           "title": "Role",
           "type": "select",
           "choices": {
@@ -155,7 +155,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "f3",
+          "code": "a2fuel",
           "title": "Fuel x5",
           "type": "counter",
           "defaultValue": 0,
@@ -170,7 +170,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "ef5",
+          "code": "efuel",
           "title": "Fuel x5",
           "type": "counter",
           "defaultValue": 0,
@@ -189,7 +189,7 @@
             "x": "No Climb"
           },
           "required": false,
-          "code": "dc",
+          "code": "eclimb",
           "defaultValue": "x"
         }
       ]
@@ -199,7 +199,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "ir1",
+          "code": "Arank",
           "title": "Alliance Rank",
           "type": "select",
           "choices": {
@@ -212,8 +212,8 @@
           "required": true
         },
         {
-          "code": "sr1",
-          "title": "Scouting Accuracy",
+          "code": "sCon",
+          "title": "Scouting Confidence",
           "type": "select",
           "choices": {
             "1": "Missed Much",
@@ -224,7 +224,7 @@
           "required": true
         },
         {
-          "code": "or1",
+          "code": "Drskill",
           "title": "Drive Skill",
           "type": "select",
           "choices": {
@@ -239,7 +239,7 @@
           "required": true
         },
         {
-          "code": "dr2",
+          "code": "Dskill",
           "title": "Defense Skill",
           "type": "select",
           "choices": {
@@ -254,7 +254,7 @@
           "required": true
         },
         {
-          "code": "ar3",
+          "code": "askill",
           "title": "Accuracy",
           "type": "select",
           "choices": {
@@ -269,7 +269,7 @@
           "required": true
         },
         {
-          "code": "co1",
+          "code": "comm",
           "title": "Comments",
           "type": "text",
           "min": 0,

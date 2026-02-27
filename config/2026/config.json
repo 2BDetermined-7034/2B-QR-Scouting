@@ -97,14 +97,6 @@
           "min": 0,
           "step": 5,
           "required": false
-        },
-        {
-          "code": "test",
-          "title": "test",
-          "type": "range",
-          "min": 0,
-          "max": 5,
-          "defaultValue": 0
         }
       ]
     },

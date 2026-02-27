@@ -43,13 +43,6 @@
           "type": "number",
           "required": true,
           "code": "teamNumber"
-        },
-        {
-          "code": "disabled",
-          "title": "Robot Disabled",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
         }
       ]
     },
@@ -196,6 +189,13 @@
       "name": "Postmatch",
       "preserveDataOnReset": false,
       "fields": [
+        {
+          "code": "disabled",
+          "title": "Robot Disabled",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
         {
           "code": "aside",
           "title": "Side climb?",

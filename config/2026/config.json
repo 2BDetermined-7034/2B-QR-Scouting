@@ -118,10 +118,10 @@
           "title": "Role",
           "type": "select",
           "choices": {
-            "1": "Shooter",
-            "2": "Shuttle",
-            "3": "Defense",
-            "x": "Other"
+            "s": "Shooter",
+            "l": "Shuttle",
+            "d": "Defense",
+            "o": "Other"
           },
           "multiSelect": true,
           "required": true
@@ -146,10 +146,10 @@
           "title": "Role",
           "type": "select",
           "choices": {
-            "1": "Shooter",
-            "2": "Shuttle",
-            "3": "Defense",
-            "x": "Other"
+            "s": "Shooter",
+            "l": "Shuttle",
+            "d": "Defense",
+            "o": "Other"
           },
           "multiSelect": true,
           "required": true
@@ -263,10 +263,10 @@
           "title": "Accuracy",
           "type": "select",
           "choices": {
-            "1": "50% & under",
-            "2": "60% - 70%",
-            "3": "70% - 80%",
-            "4": "90% - 100%",
+            "-1": "50% & under",
+            "-.5": "60% - 70%",
+            "0": "70% - 80%",
+            "1": "90% - 100%",
             "x": "Not Observed"
           },
           "defaultValue": "x",

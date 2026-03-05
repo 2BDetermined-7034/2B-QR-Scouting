@@ -221,9 +221,9 @@
           "title": "Scouting Confidence",
           "type": "select",
           "choices": {
-            "1": "Missed Much",
-            "2": "Caught Most",
-            "3": "Caught All"
+            "-1": "1 - Missed Much",
+            "0": "2 - Caught Most",
+            "1": "3 - Caught All"
           },
           "defaultValue": "2",
           "required": true
@@ -233,11 +233,11 @@
           "title": "Drive Skill",
           "type": "select",
           "choices": {
-            "1": "Active Hindrance",
-            "2": "Not Effective",
-            "3": "Average",
-            "4": "Fairly Effective",
-            "5": "Very Effective",
+            "-1": "1 - Active Hindrance",
+            "-.5": "2 - Not Effective",
+            "0": "3 - Fairly Effective",
+            ".5": "4 - Effective",
+            "1": "5- Very Effective",
             "x": "Not Observed"
           },
           "defaultValue": "x",
@@ -248,11 +248,11 @@
           "title": "Defense Skill",
           "type": "select",
           "choices": {
-            "1": "Active Hindrance",
-            "2": "Not Effective",
-            "3": "Average",
-            "4": "Fairly Effective",
-            "5": "Very Effective",
+            "-1": "1 - Active Hindrance",
+            "-.5": "2 - Not Effective",
+            "0": "3 - Fairly Effective",
+            ".5": "4 - Effective",
+            "1": "5 - Very Effective",
             "x": "Not Observed"
           },
           "defaultValue": "x",

@@ -121,10 +121,11 @@
             "s": "Shooter",
             "l": "Shuttle",
             "d": "Defense",
+            "x": "Did Nothing",
             "o": "Other"
           },
           "multiSelect": true,
-          "required": true
+          "required": false
         }
       ]
     },
@@ -139,7 +140,7 @@
           "defaultValue": 0,
           "min": 0,
           "step": 5,
-          "required": false
+          "required": true
         },
         {
           "code": "a2role",
@@ -149,6 +150,7 @@
             "s": "Shooter",
             "l": "Shuttle",
             "d": "Defense",
+            "x": "Did Nothing",
             "o": "Other"
           },
           "multiSelect": true,

@@ -227,7 +227,7 @@
             "0": "2 - Caught Most",
             "1": "3 - Caught All"
           },
-          "defaultValue": "2",
+          "defaultValue": "0",
           "required": true
         },
         {
